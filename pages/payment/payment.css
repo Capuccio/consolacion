@@ -1,0 +1,29 @@
+.selected-tags {
+	margin-top: 8px;
+	display: grid;
+	gap: 0.625rem;
+	grid-template-columns: repeat(4, 1fr);
+	font-size: 0.813rem;
+}
+
+.tag {
+	background-color: #7E8ED3;
+	border-radius: 9999px;
+	padding: 4px 8px;
+	display: flex;
+	align-items: center;
+	color: #fff;
+}
+
+.tag > span {
+	flex: 1;
+}
+
+.tag > button {
+	cursor: pointer;
+	color: gray;
+	font-weight: bold;
+	background: none;
+	border: none;
+	outline: none;
+}

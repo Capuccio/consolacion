@@ -1,0 +1,72 @@
+.title {
+	text-align: center;
+}
+
+.section {
+	width: 500px;
+	padding: 10px 50px 30px;
+}
+
+.form__title {
+	text-align: center;
+	margin-bottom: 0.625rem;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+}
+
+.submit-right {
+	margin-left: auto;
+}
+
+.button-width {
+	width: 150px;
+}
+
+.student {
+	display: none;
+}
+
+.add-student {
+	margin: 0.875rem 0;
+	text-align: center;
+}
+
+ .add-student > button {
+	width: 200px;
+	margin-left: auto;
+}
+
+.student-list {
+	display: flex;
+	flex-direction: column;
+	row-gap: .625rem;
+}
+
+.student-detail {
+	background-color: rgb(255, 255, 255, 0.5);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	border-radius: 0.625rem;
+	padding: 0.75rem 0.75rem 0;
+	outline: none;
+}
+
+.student-detail[open] {
+	padding: 0.75rem;
+}
+
+.student-detail[open] .student-summary {
+	border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+	margin-bottom: 0.5rem;
+
+}
+
+.student-summary {
+	padding: 0.75rem;
+	margin: -0.75rem -0.75rem 0;
+	font-weight: bold;
+	cursor: pointer;
+}

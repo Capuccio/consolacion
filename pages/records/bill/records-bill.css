@@ -1,0 +1,31 @@
+.section-table {
+	width: 1400px;
+	height: 490px;
+}
+
+.search-container {
+	margin-bottom: 10px;
+	padding: 0.875rem;
+}
+
+.search-container > form {
+	display: flex;
+	gap: 20px;
+}
+
+.search-container input[type=date] {
+	width: 215px;
+}
+
+.search-container .button {
+	width: 120px;
+}
+
+.modal-section {
+	width: 250px;
+	height: 250px;
+}
+
+table {
+	font-size: 0.875rem;
+}

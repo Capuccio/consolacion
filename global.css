@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+	--color-primary: #68BFEB;
+	--color-primary-hover: #5fb0d9;
+	--color-success: #00B49D;
+	--color-success-hover: #00B49D;
+}
+
+*, *::after, *::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto';
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background: linear-gradient(20deg, #74A0DE, #78DAED);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.main {
+	display: grid;
+	place-content: center;
+}
+
+.section {
+	background-color: rgb(255, 255, 255, 0.5);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	border-radius: 0.625rem;
+}
+
+a:visited, a:hover, a:link {
+	text-decoration: none;
+	color: inherit;
+}
+
+.w-full {
+	width: 100%;
+}
+
+.msg-error {
+	display: none;
+	font-size: 0.75rem;
+	color: #dc3545;
+}
+
+/* INPUT */
+
+.input {
+	border: none;
+	outline: none;
+	border-radius: 0.5rem;
+	line-height: 2rem;
+	padding: 0 0.875rem;
+}
+
+.input-disabled {
+	pointer-events: none;
+	background-color: #e9ecef;
+}
+
+.label {
+	margin-bottom: 0.5rem;
+	line-height: 18px;
+	font-size: 0.875rem;
+}
+
+/* SELECT */
+
+.select {
+	border: none;
+	outline: none;
+	border-radius: 0.5rem;
+	padding: 0.625rem;
+}
+
+/* BUTTONS */
+
+.button {
+	color: #fff;
+	cursor: pointer;
+	text-align: center;
+	padding: 0.5rem;
+	border: none;
+	border-radius: 0.5rem;
+	line-height: 22px;
+	font-size: .875rem;
+}
+
+.button-primary {
+	background-color: var(--color-primary);
+}
+
+.button-primary:hover {
+	background-color: var(--color-primary-hover);
+}
+
+.button-success {
+	background-color: var(--color-success);
+}
+
+.button-success:hover {
+	background-color: var(--color-success-hover);
+}
+
+.button-danger {
+	background-color: #d9534f;
+}
+
+.button-danger:hover {
+	background-color: #B83536;
+}
+
+.button-pagination {
+	color: #000;
+	background-color: #fff;
+	font-size: 1rem;
+	border-radius: 0.325rem;
+	width: 25px;
+	height: 38px;
+}
+
+.button-pagination:hover {
+	background-color: #DADDE2;
+}
+
+.button-pagination--active {
+	background-color: #007bff;
+	color: #fff;
+}
+
+.button-pagination--active:hover {
+	background-color: #007bff;
+}
+
+.pagination {
+	display: inline-block;
+	margin-left: auto;
+	margin-top: 10px;
+}
+
+/* BACK BUTTON */
+
+.page-header {
+	display: flex;
+	align-items: center;
+	gap: 25px;
+	margin: 1rem 0 1.5rem;
+}
+
+.button-back {
+	width: 48px;
+	height: 48px;
+	padding: 4px;
+	border-radius: 999px;
+	background-color: transparent;
+	cursor: pointer;
+	border: none;
+	outline: none;
+}
+
+.image-back {
+	width: 100%;
+}
+
+/* TABLE */
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+}
+
+thead {
+	border-bottom: 1px solid rgb(255, 255, 255, 0.5);
+}
+
+th, td {
+	padding: 0.875rem;
+}
+
+/* MODAL */
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: rgba(116, 160, 222, 0.65);
+	backdrop-filter: blur(20px);
+}
+
+.modal-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.modal-title {
+	display: flex;
+	align-items: center;
+}
+
+.close-modal {
+	margin-left: auto;
+	font-size: 1.7rem;
+}
+
+.close-modal:hover, .close-modal:focus {
+	color: #000;
+	text-decoration: none;
+  cursor: pointer;
+}
+
+/* LOGOUT */
+
+.logout {
+	position: absolute;
+	right: 50px;
+	top: 20px;
+}
+
+.button-logout {
+	width: 65px;
+	border-radius: 999px;
+	background-color: transparent;
+	cursor: pointer;
+	border: none;
+	outline: none;
+}

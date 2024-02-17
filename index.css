@@ -1,0 +1,35 @@
+body {
+	display: grid;
+	place-content: center;
+}
+
+.nav {
+	display: flex;
+	gap: 7rem;
+}
+
+.nav__option {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	align-items: center;
+	flex: 1 1 auto;
+	background-color: rgb(255, 255, 255, 0.5);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	border-radius: 0.625rem;
+	padding: 0.875rem;
+	height: 300px;
+	width: 14.25rem;
+	user-select: none;
+}
+
+.nav__option:visited, .nav__option:hover, .nav__option:link {
+	color: black;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	gap: 0.625rem;
+	align-items: center;
+}

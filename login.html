@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+	<link rel="stylesheet" href="./login.css" />
+	<link rel="stylesheet" href="./global.css" />
+	<script src="./js/form.js"></script>
+</head>
+<body>
+	<main class="container">
+		<form id="login" action="#" class="form" onsubmit="login(event)" method="post">
+			<div>
+				<img src="./public/HNSC-Azul.png" alt="Consolacion logo" class="form__image" />
+			</div>
+			<div class="form__form">
+				<input name="user" placeholder="Usuario" class="input" />
+				<input name="password" type="password" placeholder="Contraseña" class="input" />
+				<button type="submit" class="button button-primary">Ingresar</button>
+			</div>
+			<span class="msg-error">Error al iniciar sesión, usuario o clave incorrectos</span>
+		</form>
+	</main>
+	<script>
+		async function login(event) {
+			const form = formEvent(event);
+			const response = await fetch("./server/controller.user.php", {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({ ...form, table: 'parents', route: 'login' })
+			})
+			const text = await response.text();
+			const json = JSON.parse(text);
+			console.log(json);
+			if (json.statusCode == 200 && json.message.includes("administrador")) {
+				window.location.href = './index.php';
+			} else if (json.statusCode === 200) {
+				window.location.href = './pages/payment/payment.php';
+			} else {
+				const error = document.getElementsByClassName("msg-error");
+				error[0].style.display = 'block';
+			}
+		}
+	</script>
+</body>
+</html>

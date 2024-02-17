@@ -1,0 +1,10 @@
+.section {
+	width: 250px;
+	padding: 10px 10px 10px;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+}

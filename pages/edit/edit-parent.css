@@ -1,0 +1,7 @@
+.footer-buttons {
+	display: flex;
+}
+
+.footer-buttons > button:nth-child(2) {
+	margin-left: auto;
+}
