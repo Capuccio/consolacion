@@ -24,6 +24,14 @@
 .modal-section {
 	width: 250px;
 	height: 250px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 22px;
+}
+
+#modal-delete {
+	flex: 1;
 }
 
 table {

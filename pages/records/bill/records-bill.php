@@ -162,7 +162,7 @@ $total_pages = $payment->countSearchPayments($sort, $q, $date);
 					¿Seguro que desea eliminar este registro?
 				</div>
 				<div class="modal-buttons">
-					<button onclick="modalDelete()" class="button button-danger">Eliminar</button>
+					<button onclick="modalDelete()" class="button button-danger w-full">Eliminar</button>
 				</div>
 			</section>
 		</div>
