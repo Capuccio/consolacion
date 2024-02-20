@@ -1,5 +1,4 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . '/consolacion/server/confirmLogin.php';
 require_once $_SERVER["DOCUMENT_ROOT"] . '/consolacion/server/payment.service.php';
 
 $paymentService = new PaymentService();
@@ -35,7 +34,7 @@ $payment = $paymentService->getPayment($_GET["id"]);
 						<span class="span-data"><?php echo $payment->data["id_parents"]; ?></span>
 					</div>
 					<div class="bill-date">
-						<div class="bill-text">FACTURA <span style="color: #e01116;">1</span></div>
+						<div class="bill-text">FACTURA <span style="color: #e01116;"><?php echo $payment->data["bill"]; ?></span></div>
 						<div>FECHA DE EMISIÓN</div>
 						<div>13-02-2024</div>
 					</div>
