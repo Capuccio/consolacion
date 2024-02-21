@@ -10,6 +10,7 @@ $date = (isset($_GET["date"])) ? $_GET["date"] : "";
 $payment = new PaymentService();
 $allPayments = $payment->searchPayments($sort, $q, $date, $page);
 $total_pages = $payment->countSearchPayments($sort, $q, $date);
+//print_r($allPayments);
 //print_r($total_pages);
 ?>
 

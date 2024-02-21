@@ -3,7 +3,7 @@ include_once("connect_db.php");
 
 class PaymentService {
 	protected $conn;
-	protected $per_pages= 6;
+	protected $per_pages = 5;
 
 	function __construct() {
 		$db = ConnectDB::getInstance();
@@ -130,7 +130,7 @@ class PaymentService {
 		$params = [];
 
 //		$sql = "SELECT COUNT(*) FROM payments";
-		$sql = "SELECT COUNT(*), (SELECT GROUP_CONCAT(DISTINCT students.student_name, ' ', students.student_last_name)) AS students_names, (SELECT GROUP_CONCAT(DISTINCT months.month)) AS months_payed FROM students INNER JOIN student_month_payment ON students.id_students = student_month_payment.student_month_payment_id_students INNER JOIN payments ON student_month_payment.student_month_payment_bill = payments.bill INNER JOIN parents ON payments.parent = parents.id_parents INNER JOIN months ON student_month_payment.student_month_payment_id_month = months.id_month";
+		$sql = "SELECT *, (SELECT GROUP_CONCAT(DISTINCT students.student_name, ' ', students.student_last_name)) AS students_names, (SELECT GROUP_CONCAT(DISTINCT months.month)) AS months_payed FROM students INNER JOIN student_month_payment ON students.id_students = student_month_payment.student_month_payment_id_students INNER JOIN payments ON student_month_payment.student_month_payment_bill = payments.bill INNER JOIN parents ON payments.parent = parents.id_parents INNER JOIN months ON student_month_payment.student_month_payment_id_month = months.id_month";
 
 		if (!empty($q) || !empty($date)) {
 			$sql .= " WHERE";
@@ -153,10 +153,10 @@ class PaymentService {
 		$sql .= " GROUP BY payments.bill";
 
 		try {
-			$total_count = $this->conn->prepare($sql);
-			$total_count->execute($params);
-			$count = $total_count->fetchColumn();
-			$response->data = ceil($count / $this->per_pages);
+			$total_stmt = $this->conn->prepare($sql);
+			$total_stmt->execute($params);
+			$total_payments = $total_stmt->fetchAll(PDO::FETCH_ASSOC);
+			$response->data = ceil(count($total_payments) / $this->per_pages);
 		} catch (\Throwable $th) {
 			$response->message = $th->getMessage();
 			$response->data = 0;
